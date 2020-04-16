@@ -3,57 +3,56 @@
 
 To start track the changes of a folder w/o files, we need to initiate it first.
 
-\```shell
-
+```shell
 git init
+```
 
-\```
 
 After initialization, there is .git folder inside. It makes it possible to track the change of the folder. If we want to stop to track, delete the .git.
 
-\```shell
+```shell
 
 rm -rf .git
 
-\```
+```
 
 Then, we no longer track it. If we want to track it again, use the same to initiate.
 
-\```shell
+```shell
 
 git init
 
-\```
+```
 
 Following, we can run this to check the status of this folder.
 
-\```shell
+```shell
 
 git status
 
-\```
+```
 
 Here, we can see some untracted files displayed.
 
 To create new files, use this.
 
-\```shell
+```shell
 
 touch file_name
 
-\```
+```
 
 For example, we can create a file called .gitignore, to filter the files we don't want to share.
 
-\```shell
+```shell
 
 touch .gitignore
 
-\```
+```
 
 In this .gitignore file, we can list all the files, or types of files that git would not track.
 
-\```shell
+```shell
 
 .DS_store
 
@@ -63,15 +62,15 @@ file_name2
 
 *.file_type
 
-\```
+```
 
 Then, we run
 
-\```shell
+```shell
 
 git status
 
-\```
+```
 
 We can see file_name1, file_name2 and files in file_type cannot be seen on the screen.
 
@@ -79,7 +78,7 @@ We can see file_name1, file_name2 and files in file_type cannot be seen on the s
 
 Add files to staging area.
 
-\```shell
+```shell
 
 git add -A
 
@@ -87,21 +86,21 @@ or
 
 git add .
 
-\```
+```
 
 After adding to the staging area, continue to commit.
 
-\```shell
+```shell
 
 git commit -m "Initial Commit"
 
-\```
+```
 
 
 
 If you want the file back to staging area, use
 
-\```shell
+```shell
 
 git reset file_name
 
@@ -109,21 +108,21 @@ or
 
 git reset (to remove every file in staging area)
 
-\```
+```
 
 
 
 
 
-\## Clone a repository and push changes
+## Clone a repository and push changes
 
 Go to an empty folder you want to put the remote repository. Let's say folder1_clone. It must be an empty folder for clone. To check if the folder is empty or not, use this.
 
-\```shell
+```shell
 
 ls -la
 
-\```
+```
 
 <p align="center">
 
@@ -133,9 +132,9 @@ ls -la
 
 
 
-\+ Clone a local repository. <br>
++ Clone a local repository. <br>
 
-\```shell
+```shell
 
 git clone <path/folder_name> (where to clone)
 
@@ -143,15 +142,15 @@ e.g.
 
  git clone ../folder1 .
 
-\```
+```
 
  This is to clone the folder1 to the current folder you are in, "folder1_clone". The last character "." means the current folder.
 
 
 
-\+ Clone a url repository. <br>
++ Clone a url repository. <br>
 
-\```shell
+```shell
 
 git clone <url> (where to clone)
 
@@ -159,23 +158,23 @@ e.g.
 
  git clone https://github.com/XXX/XXX.git .
 
-\```
+```
 
 To check the cloned repository. <br>
 
-\```shell
+```shell
 
 git remote -v
 
 git branch
 
-\```
+```
 
 
 
 After doing some changes in this cloned folder, push the change to the origin folder.
 
-\```shell
+```shell
 
 git diff (to check what differences have been made.)
 
@@ -187,13 +186,13 @@ git pull origin master (change this cloned one with any change from the original
 
 git push origin master (push the cloned folder change to the original folder) 
 
-\```
+```
 
 
 
 Perhaps you get this error after git push.
 
-\```shell
+```shell
 
 remote: error: refusing to update checked out branch: refs/heads/master
 
@@ -223,19 +222,19 @@ remote: To squelch this message and still keep the default behaviour, set
 
 remote: 'receive.denyCurrentBranch' configuration variable to 'refuse'.
 
-\```
+```
 
 In this case, you need to make a little change to the config.
 
-\```shell
+```shell
 
 git config receive.denyCurrentBranch updateInstead (<span style="color:yellow"> This is super important. Without this, the cloned folder's change cannot be pushed to this original folder. </span>)
 
-\```
+```
 
 After this config change, when you push, you can see the following.
 
-\```shell
+```shell
 
 $ git push origin master
 
@@ -254,5 +253,4 @@ Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
 To C:/Users/erica/Documents/Git-Basics/Cloned-Repo/../remote_repo.git
 
   1e9422b..58880f8 master -> master
-
-\```
+```
