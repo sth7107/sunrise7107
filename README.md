@@ -124,12 +124,7 @@ ls -la
 
 ```
 
-<p align="center">
-
-<img src=lsla.png>
-
-</p>
-
+![image](lsla.png)
 
 
 + Clone a local repository. <br>
