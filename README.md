@@ -227,9 +227,7 @@ remote: 'receive.denyCurrentBranch' configuration variable to 'refuse'.
 In this case, you need to make a little change to the config.
 
 ```shell
-
-git config receive.denyCurrentBranch updateInstead (<span style="color:yellow"> This is super important. Without this, the cloned folder's change cannot be pushed to this original folder. </span>)
-
+git config receive.denyCurrentBranch updateInstead
 ```
 
 After this config change, when you push, you can see the following.
